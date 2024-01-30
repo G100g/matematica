@@ -5,22 +5,13 @@ const gameMachine = createMachine({
     count: 0,
   },
   initial: "begin",
-  on: {
-    begin: {
-      actions: assign({
-        start: ({ context }) => context.count + 1,
-      }),
+  states: {
+    begins: {
+      on: {
+        start: { target: "running" },
+      },
     },
-    DEC: {
-      actions: assign({
-        count: ({ context }) => context.count - 1,
-      }),
-    },
-    SET: {
-      actions: assign({
-        count: ({ event }) => event.value,
-      }),
-    },
+    running: {},
   },
 });
 

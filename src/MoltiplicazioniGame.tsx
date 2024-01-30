@@ -6,12 +6,12 @@ function shuffle<T extends number[]>(array: T): T {
   return array;
 }
 
-function random(seed: number) {
-  const x = Math.sin(seed++) * 10000;
-  return x - Math.floor(x);
-}
+// function random(seed: number) {
+//   const x = Math.sin(seed++) * 10000;
+//   return x - Math.floor(x);
+// }
 
-function getRandomArbitrary(min, max) {
+function getRandomArbitrary(min: number, max: number) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
